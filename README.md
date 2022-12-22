@@ -1,1 +1,1 @@
-# BD_Relacional
+Exercícios desenvolvidos nas disciplinas Modelagem de Banco de Dados (2022/1) e Banco de Dados Relacional (2022/2), nos dois primeiros semestres do curso de Desenvolvimento de Software Multiplataforma (Fatec).
