@@ -6,18 +6,18 @@ CREATE DATABASE bd_Gravadora;
 USE bd_Gravadora;
 
 CREATE TABLE Gravadora (
-	Grav_Cod int primary key auto_increment,
+    Grav_Cod int primary key auto_increment,
     Grav_Nome varchar(100) not null,
     Grav_End varchar(255)
 );
 
 CREATE TABLE Autor (
-	Aut_Cod int primary key auto_increment,
+    Aut_Cod int primary key auto_increment,
     Aut_Nome varchar(100) not null
 );
 
 CREATE TABLE Album (
-	Album_Cod int primary key auto_increment,
+    Album_Cod int primary key auto_increment,
     CD_Grav_Cod int not null,
     CD_Nome varchar(100) not null,
     CD_Valor double(4,2),
@@ -26,21 +26,21 @@ CREATE TABLE Album (
 );
 
 CREATE TABLE Musica (
-	Mus_Cod int primary key auto_increment,
+    Mus_Cod int primary key auto_increment,
     Mus_Nome varchar(100) not null,
     Mus_Duracao time not null,
     Mus_Faixa char(2) not null
 );
 
 CREATE TABLE Item_CD (
-	Ite_Mus_Cod int not null,
+    Ite_Mus_Cod int not null,
     Ite_Album_Cod int not null,
     foreign key (Ite_Mus_Cod) references Musica (Mus_Cod),
     foreign key (Ite_Album_Cod) references Album (Album_Cod)
 );
 
 CREATE TABLE Musica_Autor (
-	Mus_Cod int not null,
+    Mus_Cod int not null,
     Aut_Cod int not null,
     foreign key (Mus_Cod) references Musica (Mus_Cod),
     foreign key (Aut_Cod) references Autor (Aut_Cod)
@@ -53,7 +53,7 @@ use bd_gravadora;
 
 INSERT INTO Gravadora (Grav_Nome, Grav_End)
 VALUES 
-		("We Are Triumphant", "Boston, Massachusetts, EUA"),
+	("We Are Triumphant", "Boston, Massachusetts, EUA"),
         ("Sumerian Records", "Los Angeles, California, EUA"),
         ("Rise Records", "Portland, Oregon, EUA"),
         ("SharpTone Records", "Los Angeles, California, EUA"),
@@ -65,7 +65,7 @@ SELECT * FROM Gravadora;
 
 INSERT INTO Autor (Aut_Nome)
 VALUES
-		("Wvnder"),
+	("Wvnder"),
         ("Galleons"),
         ("Asking Alexandria"),
         ("The Wise Man's Fear"),
@@ -77,7 +77,7 @@ SELECT * FROM Autor;
 
 INSERT INTO Album (CD_Grav_Cod, CD_Nome, CD_Valor, CD_Data_Lanc)
 VALUES
-		(1, "Precipe", null, "2016-08-19"),
+	(1, "Precipe", null, "2016-08-19"),
         (1, "Wander", null, "2014-08-25"),
         (2, "From Death to Destiny", null, "2013-08-03"),
         (2, "Asking Alexandria", null, "2017-12-15"),
@@ -89,7 +89,7 @@ SELECT * FROM Album;
 
 INSERT INTO Musica (Mus_Nome, Mus_Duracao, Mus_Faixa)
 VALUES
-		("Afterimage", "00:04:30", "1"),
+	("Afterimage", "00:04:30", "1"),
         ("Thanks a Lot", "00:03:07", "6"),
         ("Believe", "00:04:31", "7"),
         ("Into the Fire", "00:03:57", "2"),
@@ -101,7 +101,7 @@ SELECT * FROM Musica;
 
 INSERT INTO Item_CD (Ite_Mus_Cod, Ite_Album_Cod)
 VALUES
-		(1, 1),
+	(1, 1),
         (2, 2),
         (3, 3),
         (4, 4),
@@ -113,7 +113,7 @@ SELECT * FROM Item_CD;
 
 INSERT INTO Musica_Autor (Mus_Cod, Aut_Cod)
 VALUES
-		(1, 1),
+	(1, 1),
         (2, 1),
         (3, 3),
         (4, 3),
