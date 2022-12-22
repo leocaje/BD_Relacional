@@ -6,14 +6,14 @@ USE bd_Mecanico;
 
 -- DDL Criação de Tabelas
 CREATE TABLE Cliente (
-	CPF char(11) primary key not null,
+    CPF char(11) primary key not null,
     Nome varchar(255) not null,
     Telefone varchar(100),
     Endereco varchar(255)
 );
 
 CREATE TABLE Veiculo (
-	Renavam char(11) primary key not null,
+    Renavam char(11) primary key not null,
     Chassi varchar(255),
     Modelo varchar(100),
     Cor varchar(50),
@@ -22,7 +22,7 @@ CREATE TABLE Veiculo (
 );
 
 CREATE TABLE Relato_Cliente (
-	id_Relato int primary key auto_increment,
+    id_Relato int primary key auto_increment,
     Problema varchar(1000),
     Data_Ocorrencia date,
     Renavam char(11) not null,
@@ -30,20 +30,20 @@ CREATE TABLE Relato_Cliente (
 );
 
 CREATE TABLE Servico (
-	id_Servico int primary key auto_increment not null,
+    id_Servico int primary key auto_increment not null,
     Descricao varchar(1000),
     Custo varchar(20),
     Tempo_Realizacao varchar(20)
 );
 
 CREATE TABLE Produto (
-	id_Produto int primary key auto_increment not null,
+    id_Produto int primary key auto_increment not null,
     Descricao varchar(1000),
     Custo varchar(20)
 );
 
 CREATE TABLE Orcamento (
-	id_Orcamento int primary key auto_increment not null,
+    id_Orcamento int primary key auto_increment not null,
     Renavam char(11) not null,
     Situacao varchar(1000),
     Data_Orcamento date,
@@ -54,7 +54,7 @@ CREATE TABLE Orcamento (
 );
 
 CREATE TABLE item_servico (
-	id_Servico int not null,
+    id_Servico int not null,
     id_Orcamento int not null,
     Situacao varchar(1000),
     Custo varchar(20),
@@ -63,7 +63,7 @@ CREATE TABLE item_servico (
 );
 
 CREATE TABLE item_produto (
-	id_Produto int not null,
+    id_Produto int not null,
     id_Orcamento int not null,
     Situacao varchar(1000),
     Quantidade varchar(3),
